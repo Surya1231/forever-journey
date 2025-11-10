@@ -1,0 +1,324 @@
+/* Basic Reset and Global Styles */
+body {
+    margin: 0;
+    font-family: 'Georgia', serif; 
+    color: #333;
+    transition: background-color 0.5s, color 0.5s;
+    overflow-x: hidden;
+}
+
+/* Add this new rule */
+.image-placeholder img,
+.moving-surya img,
+.moving-komal img {
+    max-width: 100%; /* Ensures image doesn't overflow its parent */
+    max-height: 100%; /* Ensures image doesn't overflow vertically */
+    object-fit: contain; /* Crops the image to fill the div without distorting aspect ratio */
+    display: block; /* Removes extra space below the image */
+    border-radius: inherit; /* If the parent has border-radius, the image will follow */
+}
+
+/* Section Styling */
+.full-screen-section {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Card Styling (for Password Section) */
+.card {
+    background: #fff;
+    padding: 40px; /* Increased padding for desktop */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 450px; /* Increased max-width for desktop input area */
+    width: 90%; 
+}
+
+.card h1 {
+    color: #e91e63; 
+    font-size: 2em; /* Larger font for desktop */
+}
+
+/* Input and Button Styling */
+#password-input {
+    padding: 12px;
+    margin: 15px 0;
+    width: 80%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 25px;
+    font-size: 16px; /* Larger button text for desktop */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Content Box Styling - OPTIMIZED FOR DESKTOP */
+.content-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px; /* Generous padding for desktop */
+    border-radius: 15px;
+    max-width: 900px; /* Significantly increased max-width for a better reading experience on desktop */
+    width: 90%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.content-box h1 {
+    font-size: 2.5em; /* Large, prominent headlines */
+    color: #880e4f;
+    margin-bottom: 20px;
+}
+
+/* Character Profile Layout - DESKTOP DEFAULT */
+.character-profile {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Increased gap */
+    margin-top: 30px;
+    text-align: left;
+}
+.character-profile .image-placeholder {
+    width: 250px; /* Larger image size for desktop */
+    height: 300px;
+    background-color: #ccc;
+    border: 5px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    color: #666;
+    flex-shrink: 0;
+}
+
+/* Meeting Animation Layout - OPTIMIZED FOR DESKTOP */
+.meeting-animation-container {
+    display: flex;
+    justify-content: space-between;
+    width: 600px; /* Wider animation area */
+    margin: 40px auto;
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.moving-surya, .moving-komal {
+    position: absolute;
+    width: 200px; 
+    height: 250px;
+    transition: transform 3s ease-in-out;
+    background-color: white;
+}
+.moving-surya { left: 0; transform: translateX(0); }
+.moving-komal { right: 0; transform: translateX(0); }
+/* Increased distance traveled for a better animation effect on desktop */
+.animate-meet .moving-surya { transform: translateX(200px); } 
+.animate-meet .moving-komal { transform: translateX(-200px); }
+
+/* Couple Photos */
+.couple-photo {
+    width: 90%;
+    max-width: 500px; /* Larger max-width for desktop photos */
+    height: 350px;
+    background-color: #ccc;
+    border: 5px solid white;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    color: #666;
+}
+
+/* =======================================================
+   MEDIA QUERY FOR MOBILE DEVICES (Screens up to 768px wide)
+   ======================================================= 
+   This section overrides the desktop styles when the screen is small.
+*/
+@media (max-width: 768px) {
+    
+    .full-screen-section {
+        padding: 10px;
+    }
+    
+    .content-box {
+        padding: 30px 15px;
+        max-width: 95%;
+    }
+    
+    .content-box h1 {
+        font-size: 1.6em; 
+    }
+    
+    /* Stack character profile vertically */
+    .character-profile {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .character-profile .image-placeholder {
+        width: 80%;
+        max-width: 200px; 
+        height: 200px;
+        margin: 10px auto;
+    }
+
+    /* Simplify meeting animation for mobile */
+    .meeting-animation-container {
+        width: 100%;
+        max-width: 300px;
+        height: 200px;
+        margin: 20px auto;
+        justify-content: center;
+    }
+    
+    .moving-surya, .moving-komal {
+        width: 100px;
+        height: 150px;
+        top: 25px;
+    }
+    
+    /* Mobile Initial positions */
+    .moving-surya { left: -100px; transform: translateX(0); }
+    .moving-komal { right: -100px; transform: translateX(0); }
+
+    /* Mobile Final positions */
+    .animate-meet .moving-surya { transform: translateX(100px); }
+    .animate-meet .moving-komal { transform: translateX(-100px); }
+
+    .couple-photo {
+        height: 250px;
+    }
+
+    .button-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 250px;
+        margin: 10px auto;
+    }
+    
+    .button-group button {
+        width: 100%;
+        margin: 5px 0;
+        font-size: 14px;
+    }
+}
+
+
+/* --- Backgrounds and Colors (Retained from previous versions) --- */
+
+.romantic-bg { background-image: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); }
+.dark-bg { background-color: #121212; color: white; }
+.dark-bg .content-box { background: rgba(0, 0, 0, 0.7); }
+.black-bg { background-color: #000000; }
+.black-bg .content-box { background: rgba(0, 0, 0, 0.8); }
+.text-white { color: white; }
+.pink-bg { background-image: linear-gradient(135deg, #f8bbd0 0%, #e91e63 100%); }
+.text-dark { color: #333; }
+.romantic-bg-2 { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="g1" cx="50" cy="50" r="50"><stop offset="0%" stop-color="%23ffcdd2"/><stop offset="100%" stop-color="%23f48fb1"/></radialGradient></defs><rect width="100" height="100" fill="url(%23g1)"/></svg>'); background-size: cover; }
+.royal-bg { background-image: linear-gradient(135deg, #b39ddb 0%, #7e57c2 100%); color: white; }
+.royal-bg .content-box { background: rgba(255, 255, 255, 0.95); color: #333; }
+.starlight-bg { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a237e"/><circle cx="10" cy="90" r="1" fill="%23fff"/><circle cx="80" cy="20" r="0.5" fill="%23fff"/><circle cx="50" cy="50" r="1.5" fill="%23fff"/><circle cx="20" cy="40" r="1" fill="%23fff"/><circle cx="90" cy="60" r="0.8" fill="%23fff"/></svg>'); background-color: #1a237e; color: white; }
+.starlight-bg .content-box { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3); color: white; }
+.suwali-beach-bg { background-image: linear-gradient(to bottom, #ffbe76, #f07e7e); background-size: cover; background-position: center; color: white; }
+.suwali-beach-bg .content-box { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.3); }
+
+/* --- Time Travel Animation (Retained from previous versions) --- */
+#time-machine { margin: 30px 0; }
+.travel-bar {
+    width: 0%;
+    height: 10px;
+    background-color: #ff69b4;
+    margin: 10px auto;
+    border-radius: 5px;
+    transition: width 3s ease-in-out;
+}
+
+/* ... (Existing CSS remains the same) ... */
+
+/* New Styles for the Random Photo Section */
+.random-photo-container {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    margin: 30px auto;
+    cursor: pointer; /* Change cursor to indicate interactivity */
+    transition: transform 0.2s;
+}
+
+.random-photo-container:hover {
+    transform: scale(1.02); /* Slight scale on hover for visual feedback */
+}
+
+/* Ensure the image inside scales correctly */
+.couple-photo-clickable {
+    width: 100%;
+    height: 350px; /* Fixed height for consistency */
+    object-fit: cover;
+    border: 5px solid #fff;
+    border-radius: 10px;
+}
+
+.click-text {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    pointer-events: none; /* Allows click to pass through to the container */
+}
+
+/* Update couple photo placeholder styles to include the clickable image */
+.couple-photo, .couple-photo-clickable {
+    width: 90%;
+    max-width: 500px;
+    height: 350px; 
+    background-color: #ccc;
+    border: 5px solid white;
+    margin: 30px auto;
+    display: block; /* Use block display for images */
+    object-fit: contain;
+}
+
+/* Mobile adjustments for the new section */
+@media (max-width: 768px) {
+    .couple-photo-clickable {
+        height: 250px;
+    }
+    .click-text {
+        font-size: 0.7em;
+        padding: 3px 6px;
+    }
+}
