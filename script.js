@@ -13,6 +13,22 @@ const randomPhotoPaths = [
     "Images/memory10.jpg" 
 ];
 
+const genPhotoPaths = [
+    "Images/gen1.png", 
+    "Images/gen2.png", 
+    "Images/gen3.png", 
+    "Images/gen4.png", 
+    "Images/gen5.png", 
+    "Images/gen6.png", 
+    "Images/gen7.png", 
+    "Images/gen8.png", 
+    "Images/gen9.png", 
+    "Images/gen10.png" 
+]
+
+let rI = 1;
+let gI = 1;
+
 /**
  * Handles the password check for the first section.
  */
@@ -20,8 +36,7 @@ function checkPassword() {
     const passwordInput = document.getElementById('password-input');
     const message = document.getElementById('password-message');
     const password = passwordInput.value;
-    const correctPassword = '8911'; // The special date: 8th November (or 9th, depending on interpretation, but using 8911 as requested)
-
+    const correctPassword = '8911'; 
     if (password === correctPassword) {
         document.getElementById('password-section').classList.add('hidden');
         document.getElementById('welcome-section').classList.remove('hidden');
@@ -35,9 +50,14 @@ function checkPassword() {
 /**
  * Displays the password hint.
  */
-function showHint() {
+function showHint(number) {
+    if(number  == '1') {
     const message = document.getElementById('password-message');
     message.textContent = "Hint: It is a very special day for my beautiful sweetheart. (DDMM format)";
+    } else {
+        const message = document.getElementById('password-message');
+    message.textContent = "Hint: Replace the number 0 by your Krishnaji's number";
+    }
 }
 
 /**
@@ -115,17 +135,28 @@ function startTravelAnimation() {
 
 function changeRandomPhoto() {
     const memoryPhoto = document.getElementById('memory-photo');
-    const randomIndex = Math.floor(Math.random() * randomPhotoPaths.length);
-    const newPath = randomPhotoPaths[randomIndex];
+    const newPath = randomPhotoPaths[rI];
 
-    // Optional: Add a transition class for a subtle effect
-    memoryPhoto.classList.add('fade-out'); 
+    memoryPhoto.src = newPath;
+    memoryPhoto.alt = `Romantic memory photo #${rI + 1}`;
+    
+    rI++;
+    if (rI >= randomPhotoPaths.length) {
+        rI = 0;
+    }
+}
 
-    setTimeout(() => {
-        memoryPhoto.src = newPath;
-        memoryPhoto.alt = `Romantic memory photo #${randomIndex + 1}`;
-        memoryPhoto.classList.remove('fade-out');
-    }, 300); // Wait for the fade-out to complete before changing source
+function changeGenPhoto(){
+    const memoryPhoto = document.getElementById('gen-photo');
+    const newPath = genPhotoPaths[gI];
+
+    memoryPhoto.src = newPath;
+    memoryPhoto.alt = `Romantic memory photo #${gI + 1}`;
+    
+    gI++;
+    if (gI >= genPhotoPaths.length) {
+        gI = 0;
+    }
 }
 
 // Ensure the time travel section starts with the current date when the page loads

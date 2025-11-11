@@ -135,7 +135,7 @@ button {
     width: 200px; 
     height: 250px;
     transition: transform 3s ease-in-out;
-    background-color: white;
+    background-color: transparent;
 }
 .moving-surya { left: 0; transform: translateX(0); }
 .moving-komal { right: 0; transform: translateX(0); }
@@ -148,14 +148,19 @@ button {
     width: 90%;
     max-width: 500px; /* Larger max-width for desktop photos */
     height: 350px;
-    background-color: #ccc;
+    background-color: #e91e63;
     border: 5px solid white;
+    padding: 5px 5px;
     margin: 30px auto;
     display: flex;
     justify-content: center;
     align-items: center;
     font-style: italic;
-    color: #666;
+    color: #e91e63;
+}
+
+.height-450 {
+    height: 450px !important;
 }
 
 /* =======================================================
@@ -202,13 +207,13 @@ button {
     
     .moving-surya, .moving-komal {
         width: 100px;
-        height: 150px;
+        height: 250px;
         top: 25px;
     }
     
     /* Mobile Initial positions */
-    .moving-surya { left: -100px; transform: translateX(0); }
-    .moving-komal { right: -100px; transform: translateX(0); }
+    .moving-surya { left: -100px; transform: translateX(200px); }
+    .moving-komal { right: -100px; transform: translateX(-200px); }
 
     /* Mobile Final positions */
     .animate-meet .moving-surya { transform: translateX(100px); }
@@ -251,6 +256,29 @@ button {
 .starlight-bg .content-box { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3); color: white; }
 .suwali-beach-bg { background-image: linear-gradient(to bottom, #ffbe76, #f07e7e); background-size: cover; background-position: center; color: white; }
 .suwali-beach-bg .content-box { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.3); }
+
+.romantic-bg-3 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23ffab91"/><stop offset="50%" stop-color="%23f48fb1"/><stop offset="100%" stop-color="%23e57373"/></linearGradient></defs><rect width="100" height="100" fill="url(%23g2)"/></svg>');
+  background-size: cover;
+}
+
+/* --- Background Option 3 (Textured: Radial Glow + Subtle Dotted Pattern) --- */
+.romantic-bg-4 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="g3" cx="50" cy="50" r="70" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="%23fff1f5"/><stop offset="100%" stop-color="%23f8bbd0"/></radialGradient><pattern id="p1" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.5" fill="%23f06292" opacity="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23g3)"/><rect width="100" height="100" fill="url(%23p1)"/></svg>');
+  background-size: cover;
+}
+
+.romantic-img-bg {
+  background-image: url("Images/bg1.jpg");
+    /* 2. Prevent the image from repeating */
+  background-repeat: no-repeat;
+  
+  /* 3. Center the image */
+  background-position: center;
+  
+  /* 4. Ensure the image covers the entire element without distortion */
+  background-size: cover;
+}
 
 /* --- Time Travel Animation (Retained from previous versions) --- */
 #time-machine { margin: 30px 0; }
@@ -301,7 +329,7 @@ button {
 }
 
 /* Update couple photo placeholder styles to include the clickable image */
-.couple-photo, .couple-photo-clickable {
+.couple-photo-clickable {
     width: 90%;
     max-width: 500px;
     height: 350px; 
@@ -314,9 +342,6 @@ button {
 
 /* Mobile adjustments for the new section */
 @media (max-width: 768px) {
-    .couple-photo-clickable {
-        height: 250px;
-    }
     .click-text {
         font-size: 0.7em;
         padding: 3px 6px;

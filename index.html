@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Forever Love Story</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <section id="password-section" class="centered-content">
@@ -15,14 +17,19 @@
             <input type="password" id="password-input" placeholder="Enter the Magic Code">
             <button onclick="checkPassword()">Unlock</button>
             <p id="password-message" class="error-message"></p>
-            <button onclick="showHint()" class="hint-button">Hint?</button>
+            <button onclick="showHint('1')" class="hint-button">Hint 1</button>
+            <button onclick="showHint('2')" class="hint-button">Hint 2</button>
         </div>
     </section>
 
     <section id="welcome-section" class="full-screen-section hidden romantic-bg">
         <div class="content-box">
             <h1>💖 Welcome to a Romantic & Forever Journey 💖</h1>
-            <p>You've landed in the secret realm—a romantic journey of two souls destined to be one. Their story is a promise, a beautiful testament to love's magic. Are you ready to witness this timeless journey unfold?</p>
+            <p>You've landed in the secret realm—a romantic journey of two souls destined to be one. Their story is a
+                promise, a beautiful testament to love's magic. Are you ready to witness this timeless journey unfold?
+            </p>
+            <div class="image-placeholder couple-photo"><img src="Images/journey.jpg" alt="Surya"
+                    class="character-image" /></div>
             <div class="button-group">
                 <button onclick="nextSection('travel-section', 'Yes')">Yes</button>
                 <button onclick="nextSection('travel-section', 'Yes very very excited')">Yes very very excited!</button>
@@ -33,7 +40,8 @@
     <section id="travel-section" class="full-screen-section hidden dark-bg">
         <div class="content-box">
             <h1>⏳ Journey Back in Time...</h1>
-            <p>Every great story has a beginning. To truly appreciate this love, we must travel back to the day destiny first whispered their names.</p>
+            <p>Every great story has a beginning. To truly appreciate this love, we must travel back to the day destiny
+                first whispered their names.</p>
             <div class="button-group" id="start-travel-button-container">
                 <button onclick="initiateTravel()">Start Travel</button>
             </div>
@@ -43,7 +51,8 @@
                 <p>Destination Date: <span id="target-date">22nd October 2025</span></p>
                 <div class="travel-bar"></div>
             </div>
-            <p id="travel-complete-message" class="hidden">✨ We have arrived! The correct date is <b>22nd October 2025</b>. Do you wish to proceed with the journey?</p>
+            <p id="travel-complete-message" class="hidden">✨ We have arrived! The correct date is <b>22nd October
+                    2025</b>. Do you wish to proceed with the journey?</p>
             <div class="button-group hidden" id="travel-buttons">
                 <button onclick="nextSection('surya-section', 'Yes')">Yes</button>
                 <button onclick="nextSection('surya-section', 'Yes very very excited')">Yes very very excited!</button>
@@ -55,9 +64,12 @@
         <div class="content-box">
             <h1 class="text-white">Meet the Sunshine...</h1>
             <div class="character-profile">
-                <div class="image-placeholder" id="surya-image"><img src="Images/surya.JPG" alt="Surya" class="character-image"/></div>
+                <div class="image-placeholder" id="surya-image"><img src="Images/surya.JPG" alt="Surya"
+                        class="character-image" /></div>
                 <div class="description text-white">
-                    <p>This is <b>Surya</b>, our main lead. His name literally means "sunshine," yet some light is missing from his life. Currently, he seems sad, his world as dark as this very background. He awaits a dawn only one person can bring.</p>
+                    <p>This is <b>Surya</b>, our main lead. His name literally means "sunshine," yet some light is
+                        missing from his life. Currently, he seems sad, his world as dark as this very background. He
+                        awaits a dawn only one person can bring.</p>
                     <p>Do you wish to continue the journey?</p>
                 </div>
             </div>
@@ -72,31 +84,51 @@
         <div class="content-box">
             <h1 class="text-dark">Meet the Blossom...</h1>
             <div class="character-profile">
-                <div class="image-placeholder" id="komal-image"><img src="Images/komal.png" alt="Surya" class="character-image"/></div>
+                <div class="image-placeholder" id="komal-image"><img src="Images/komal.png" alt="Surya"
+                        class="character-image" /></div>
                 <div class="description text-dark">
-                    <p>This is <b>Komal</b>, the bride. A girl of pure joy and vibrant energy, she naturally lightens up the world around her. Her heart is as soft and gentle as her name suggests—<b>Komal</b> (soft/delicate). She is searching for the perfect partner to complete her joy.</p>
+                    <p>This is <b>Komal</b>, the bride. A girl of pure joy and vibrant energy, she naturally lightens up
+                        the world around her. Her heart is as soft and gentle as her name suggests—<b>Komal</b>
+                        (soft/delicate). She is searching for the perfect partner to complete her joy.</p>
                     <p>Do you wish to continue the journey?</p>
                 </div>
             </div>
             <div class="button-group">
                 <button onclick="nextSection('meeting-section', 'Yes')">Yes</button>
-                <button onclick="nextSection('meeting-section', 'Yes very very excited')">Yes very very excited!</button>
+                <button onclick="nextSection('meeting-section', 'Yes very very excited')">Yes very very
+                    excited!</button>
             </div>
         </div>
     </section>
 
-    <section id="meeting-section" class="full-screen-section hidden black-bg">
+    <section id="meeting-section" class="full-screen-section hidden romantic-img-bg">
         <div class="content-box">
             <h1 class="text-white">Destiny Intervenes: 22nd October 2025</h1>
-            <p class="text-white">On this date, their individual paths converged. Watch as <b>Surya</b> and <b>Komal</b> are drawn to one another—the beginning of a very beautiful love story.</p>
+            <p><strong>It was on this very day</strong> that the separate journeys of <b>Surya</b> and <b>Komal</b>
+                culminated in a single, perfect moment.
+                Watch closely as two beautiful souls, guided by an invisible thread, are finally drawn together—marking
+                the luminous beginning of a shared and beautiful love story.
+            </p>
+            <p>
+                The scene of this pivotal moment was the quaint <b>Cafe De Meet</b>. Far more than just a cafe, it
+                became the foundation of their eternal bond—a profoundly special place where their individual destinies
+                intertwined.
+                Their conversation was immediate and deep, flowing effortlessly for hours; the barrier of a first
+                meeting simply vanished.
+                In the quiet exchange of thoughts and laughter, both hearts recognized the positive signs, knowing this
+                connection was profound and real.
+            </p>
             <div class="meeting-animation-container">
-                <div class="image-placeholder moving-surya"><img src="Images/surya.JPG" alt="Surya" class="character-image"/></div>
-                <div class="image-placeholder moving-komal"><img src="Images/komal.png" alt="Surya" class="character-image"/></div>
+                <div class="image-placeholder moving-surya"><img src="Images/g1.png" alt="Surya"
+                        class="character-image" /></div>
+                <div class="image-placeholder moving-komal"><img src="Images/g2.png" alt="Surya"
+                        class="character-image" /></div>
             </div>
-            <p class="text-white">Do you wish to continue the journey?</p>
+            <p>Do you wish to continue the journey?</p>
             <div class="button-group">
                 <button onclick="nextSection('commitment-section', 'Yes')">Yes</button>
-                <button onclick="nextSection('commitment-section', 'Yes very very excited')">Yes very very excited!</button>
+                <button onclick="nextSection('commitment-section', 'Yes very very excited')">Yes very very
+                    excited!</button>
             </div>
         </div>
     </section>
@@ -104,8 +136,10 @@
     <section id="commitment-section" class="full-screen-section hidden romantic-bg-2">
         <div class="content-box">
             <h1>Falling Forever: 23rd October 2025 💍</h1>
-            <p>Only one day later, magic happened. This is the date they both said <b>"Yes, really yes"</b> to each other. Their hearts knew, instantly. This is the moment they officially fell for each other.</p>
-            <div class="image-placeholder couple-photo"><img src="Images/couple1.jpg" alt="Surya" class="character-image"/></div>
+            <p>Only one day later, magic happened. This is the date they both said <b>"Yes, really yes"</b> to each
+                other. Their hearts knew, instantly. This is the moment they officially fell for each other.</p>
+            <div class="image-placeholder couple-photo"><img src="Images/c1.png" alt="Surya" class="character-image" />
+            </div>
             <p>Do you wish to continue the journey?</p>
             <div class="button-group">
                 <button onclick="nextSection('roka-section', 'Yes')">Yes</button>
@@ -117,8 +151,11 @@
     <section id="roka-section" class="full-screen-section hidden royal-bg">
         <div class="content-box">
             <h1>Bound for 7 Lives: 26th October 2025 💖</h1>
-            <p>Welcome to the official <b>Roka</b>! Both families met and sealed the deal. Now, no one can separate <b>#SKForever</b>. They are bound not just by love, but by destiny for seven lives.</p>
-            <div class="image-placeholder couple-photo"><img src="Images/roka.jpg" alt="Surya" class="character-image"/></div>
+            <p>Welcome to the official <b>Roka</b>! Both families met and sealed the deal. Now, no one can separate
+                <b>#SKForever</b>. They are bound not just by love, but by destiny for seven lives.
+            </p>
+            <div class="image-placeholder couple-photo height-450"><img src="Images/roka1.png" alt="Surya"
+                    class="character-image" /></div>
             <p>Do you wish to continue the journey?</p>
             <div class="button-group">
                 <button onclick="nextSection('date-section', 'Yes')">Yes</button>
@@ -130,12 +167,21 @@
     <section id="date-section" class="full-screen-section hidden starlight-bg">
         <div class="content-box">
             <h1>The Firsts: 27th October 2025 ✨</h1>
-            <p>This date marks their <b>first official date</b> and the warmth of their <b>first official hug</b>. The shy smiles, the shared dreams—the journey of forever takes its first steps.</p>
-            <div class="image-placeholder couple-photo"><img src="Images/date1.jpg" alt="Surya" class="character-image"/></div>
+            <p>This date marks their <b>first official date</b> and the warmth of their <b>first official hug</b>. The
+                shy smiles, the shared dreams—the journey of forever takes its first steps. </p>
+            <p>The first official date took place at Nomads cafe with a beautiful drive and ending with sweet dessert
+                and hug at the Belgium waffle. The air buzzed with unspoken promises as they navigated that special
+                first drive together, a prelude to countless miles ahead. At Nomads, the conversation flowed as freely
+                as the noodles, each word bringing them closer. Later, beneath the soft glow of the cafe lights, that
+                <b>first, long-anticipated embrace</b> at the Belgium Waffle sealed the beginning of their beautiful
+                story, feeling like coming home.</p>
+            <div class="image-placeholder couple-photo height-450"><img src="Images/d1.png" alt="Surya"
+                    class="character-image" /></div>
             <p>Do you wish to continue experiencing their firsts?</p>
             <div class="button-group">
                 <button onclick="nextSection('birthday-section', 'Yes')">Yes</button>
-                <button onclick="nextSection('birthday-section', 'Yes very very excited')">Yes very very excited!</button>
+                <button onclick="nextSection('birthday-section', 'Yes very very excited')">Yes very very
+                    excited!</button>
             </div>
         </div>
     </section>
@@ -143,33 +189,65 @@
     <section id="birthday-section" class="full-screen-section hidden suwali-beach-bg">
         <div class="content-box">
             <h1 class="text-white">Her Special Day: 9th November 🎂</h1>
-            <p class="text-white">The air filled with joy, the waves whispered secrets, and two hearts danced as one. This was **Komal's birthday**, a day celebrated not just with cake and gifts, but with the profound warmth of togetherness. Amidst the golden sands of Suwali Beach, every moment became a treasured memory.</p>
-            <p class="text-white">It was on this unforgettable day that the world witnessed their **first tender peck-kiss**, a sweet promise of many more to come. The shared laughter, the stolen glances, the quiet understanding—everything they did together on this day etched itself into the very fabric of their love story. It was, without a doubt, the best day of their lives, painted with the hues of love and the magic of Suwali Beach.</p>
-            <div class="image-placeholder couple-photo"><img src="Images/bday.jpg" alt="Surya" class="character-image"/></div>
+            <p class="text-white">The air filled with joy, the waves whispered secrets, and two hearts danced as one.
+                This was **Komal's birthday**, a day celebrated not just with cake and gifts, but with the profound
+                warmth of togetherness. Amidst the golden sands of Suwali Beach, every moment became a treasured memory.
+            </p>
+            <p class="text-white">It was on this unforgettable day that the world witnessed their **first tender
+                peck-kiss**, a sweet promise of many more to come. The shared laughter, the stolen glances, the quiet
+                understanding—everything they did together on this day etched itself into the very fabric of their love
+                story. It was, without a doubt, the best day of their lives, painted with the hues of love and the magic
+                of Suwali Beach.</p>
+            <div class="image-placeholder couple-photo"><img src="Images/bday.jpg" alt="Surya"
+                    class="character-image" /></div>
             <p class="text-white">And so, their journey continues, blooming with every shared moment...</p>
             <div class="button-group">
-                <button onclick="nextSection('random-photos-section', 'Yes, show more memories!')">Yes, show more memories!</button> 
+                <button onclick="nextSection('gen-photos-section', 'Yes, show more memories!')">Yes, show more
+                    memories!</button>
             </div>
         </div>
     </section>
 
-    <section id="random-photos-section" class="full-screen-section hidden romantic-bg-2">
+     <section id="gen-photos-section" class="full-screen-section hidden romantic-bg-3">
+        <div class="content-box">
+            <h1>📸 Beutiful Creations 💖</h1>
+            <p>Click on the photo below to unlock a different creation from our journey together!</p>
+
+            <div class="random-photo-container height-450" onclick="changeGenPhoto()">
+                <img id="gen-photo" src="Images/gen1.png" alt="A random romantic memory photo"
+                    class="couple-photo-clickable height-450">
+                <p class="click-text">(Click to change photo)</p>
+            </div>
+
+            <p>Do you wish to see actual memories?</p>
+            <div class="button-group">
+                <button onclick="nextSection('random-photos-section', 'Yes, take me to a new realm!')">Yes, show more
+                    memories!</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="random-photos-section" class="full-screen-section hidden romantic-bg-4">
         <div class="content-box">
             <h1>📸 Random Memories and Beautiful Moments 💖</h1>
             <p>Click on the photo below to unlock a different, randomly selected memory from our journey together!</p>
-            
+
             <div class="random-photo-container" onclick="changeRandomPhoto()">
-                <img id="memory-photo" src="Images/memory1.jpg" alt="A random romantic memory photo" class="couple-photo-clickable">
+                <img id="memory-photo" src="Images/memory1.jpg" alt="A random romantic memory photo"
+                    class="couple-photo-clickable height-450">
                 <p class="click-text">(Click to change memory)</p>
             </div>
 
             <p>Do you wish to conclude this chapter of the journey?</p>
             <div class="button-group">
-                <button onclick="alert('This is the end of this chapter. Thank you for witnessing our love story!')">Yes, the end for now</button>
+                <button
+                    onclick="alert('This is the end of this chapter. Thank you for witnessing our love story!')">Yes,
+                    the end for now</button>
             </div>
         </div>
     </section>
 
     <script src="script.js"></script>
 </body>
+
 </html>
